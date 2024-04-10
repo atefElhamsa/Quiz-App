@@ -6,7 +6,7 @@ import 'package:quizapp/features/home/views/widgets/custom_home_divider.dart';
 import '../../data/models/question_model.dart';
 
 class CheckAnswer extends StatelessWidget {
-  const CheckAnswer({super.key, required this.questions});
+  CheckAnswer({super.key, required this.questions});
 
   final List<QuestionModel> questions;
 
