@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/core/utils/app_colors.dart';
 import 'package:quizapp/core/utils/app_texts.dart';
+import 'package:quizapp/features/home/data/models/question_model.dart';
 import 'package:quizapp/features/home/views/widgets/custom_check_answer.dart';
 
 class CustomResultDialog extends StatefulWidget {
@@ -8,26 +9,30 @@ class CustomResultDialog extends StatefulWidget {
     super.key,
     required this.score,
     required this.length,
+    required this.questions,
     required this.click,
     required this.close,
   });
 
   final int score;
   final int length;
+  final List<QuestionModel> questions;
   final void Function()? click;
   final void Function()? close;
 
   @override
-  State<CustomResultDialog> createState() =>
-      _CustomResultDialogState(this.score, this.length, this.click,this.close);
+  State<CustomResultDialog> createState() => _CustomResultDialogState(
+      this.score, this.length, this.click, this.close, this.questions);
 }
 
 class _CustomResultDialogState extends State<CustomResultDialog> {
   int score;
   int length;
+  List<QuestionModel> questions;
   void click;
   void close;
-  _CustomResultDialogState(this.score, this.length, this.click,this.close);
+  _CustomResultDialogState(
+      this.score, this.length, this.click, this.close, this.questions);
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -85,10 +90,10 @@ class _CustomResultDialogState extends State<CustomResultDialog> {
                     onTap: () {
                       setState(() {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context){
-                              return CheckAnswer();
-                            }),
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return CheckAnswer(questions: questions);
+                          }),
                         );
                       });
                     },

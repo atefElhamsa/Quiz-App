@@ -7,4 +7,5 @@ class AppColors {
   static const Color containerResult = Color(0xff6E7070);
   static const Color wrongAnswer = Color(0xffEC2929);
   static const Color correctAnswer = Color(0xff12BA0F);
+  static const Color numberOfCheckAnswer = Color(0xff615D5D);
 }

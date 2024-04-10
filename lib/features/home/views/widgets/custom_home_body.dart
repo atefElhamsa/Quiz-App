@@ -58,7 +58,19 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text("choose one answer"),
+            content: Center(
+              child: Text(
+                "choose one answer",
+                style: TextStyle(
+                  fontSize: MediaQuery.sizeOf(context).height * 0.025,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            backgroundColor: AppColors.primaryColor,
+            showCloseIcon: true,
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            behavior: SnackBarBehavior.floating,
           ),
         );
       }
@@ -82,6 +94,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
                 Navigator.pop(context);
                 setState(() {});
               },
+              questions: questions,
             );
           });
     }

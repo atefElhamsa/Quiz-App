@@ -10,7 +10,7 @@ class CustomHomeDivider extends StatelessWidget {
       color: AppColors.primaryColor,
       indent: MediaQuery.sizeOf(context).width * 0.15,
       endIndent: MediaQuery.sizeOf(context).width * 0.15,
-      thickness: MediaQuery.sizeOf(context).height * 0.0015,
+      thickness: MediaQuery.sizeOf(context).height * 0.001,
     );
   }
 }

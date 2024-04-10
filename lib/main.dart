@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/features/home/views/widgets/custom_check_answer.dart';
+import 'features/splash/views/splash_screen.dart';
 
-void main(){
+void main() {
   runApp(const QuizApp());
 }
 
 class QuizApp extends StatelessWidget {
-  const QuizApp ({super.key});
+  const QuizApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CheckAnswer(),
+      home: SplashScreen(),
     );
   }
 }

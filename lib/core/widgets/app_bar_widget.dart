@@ -12,8 +12,12 @@ class CustomAppBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.primaryColor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(MediaQuery.sizeOf(context).width * 0.06,),
-          bottomRight: Radius.circular(MediaQuery.sizeOf(context).width * 0.06,),
+          bottomLeft: Radius.circular(
+            MediaQuery.sizeOf(context).width * 0.06,
+          ),
+          bottomRight: Radius.circular(
+            MediaQuery.sizeOf(context).width * 0.06,
+          ),
         ),
       ),
       child: Text(

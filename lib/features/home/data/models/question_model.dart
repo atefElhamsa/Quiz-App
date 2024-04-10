@@ -8,5 +8,5 @@ class QuestionModel {
     required this.answers,
     required this.correctAnswer,
     required this.selectedAnswer,
-});
+  });
 }
