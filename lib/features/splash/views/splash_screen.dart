@@ -16,14 +16,14 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(
-      Duration(
+      const Duration(
         seconds: 3,
       ),
       () {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) {
-            return HomeScreen();
+            return const HomeScreen();
           }),
         );
       },
@@ -44,14 +44,14 @@ class _SplashScreenState extends State<SplashScreen> {
                   AppImages.up,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               ElasticIn(
                 child: Image.asset(
                   AppImages.logo,
                   width: MediaQuery.sizeOf(context).width * 0.9,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Image.asset(

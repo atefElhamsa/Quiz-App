@@ -1,5 +1,6 @@
 class QuestionModel {
   String question;
+  String numberQuestion;
   List<String> answers;
   String correctAnswer;
   String? selectedAnswer;
@@ -8,5 +9,6 @@ class QuestionModel {
     required this.answers,
     required this.correctAnswer,
     required this.selectedAnswer,
+    required this.numberQuestion,
   });
 }

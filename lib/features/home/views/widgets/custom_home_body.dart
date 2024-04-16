@@ -7,43 +7,49 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_texts.dart';
 
 class CustomHomeBody extends StatefulWidget {
-  CustomHomeBody({super.key});
+  const CustomHomeBody({super.key});
 
   @override
   State<CustomHomeBody> createState() => _CustomHomeBodyState();
 }
 
 class _CustomHomeBodyState extends State<CustomHomeBody> {
+
   List<QuestionModel> questions = [
     QuestionModel(
       question: "أفضل لاعب ف التاريخ",
       answers: ["Cristiano Ronaldo", "Lionel Messi", "Neymar JR", "Halland"],
       correctAnswer: "Cristiano Ronaldo",
       selectedAnswer: null,
+      numberQuestion: "1",
     ),
     QuestionModel(
       question: "أحسن معلق ف التاريخ",
       answers: ["الشوالى", "حفيظ الدراجى", "فارس عوض", "ايمن الكاشف"],
       correctAnswer: "الشوالى",
       selectedAnswer: null,
+      numberQuestion: "2",
     ),
     QuestionModel(
       question: "كم من الكرات الذهبية مع افضل لاعب بالتاريخ",
       answers: ["1", "2", "3", "6"],
       correctAnswer: "6",
       selectedAnswer: null,
+      numberQuestion: "3",
     ),
     QuestionModel(
       question: "كم من الكرات الذهبية مع ليونيل ميسى",
       answers: ["5", "1", "10", "8"],
       correctAnswer: "8",
       selectedAnswer: null,
+      numberQuestion: "4",
     ),
     QuestionModel(
       question: "افضل كلية فى مصر",
       answers: ["حاسبات و معلومات", "هندسة", "اداب", "حقوق"],
       correctAnswer: "حاسبات و معلومات",
       selectedAnswer: null,
+      numberQuestion: "5",
     ),
   ];
 
@@ -126,6 +132,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
             right: MediaQuery.sizeOf(context).width * 0.09,
           ),
           child: Align(
+            alignment: Alignment.centerRight,
             child: Text(
               questions[questionIndex].question,
               style: GoogleFonts.almarai(
@@ -134,19 +141,18 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
                 fontSize: MediaQuery.sizeOf(context).height * 0.025,
               ),
             ),
-            alignment: Alignment.centerRight,
           ),
         ),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.02,
         ),
-        CustomHomeDivider(),
+        const CustomHomeDivider(),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.01,
         ),
         ListView.separated(
           shrinkWrap: true,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
             return RadioListTile(
               contentPadding: EdgeInsets.symmetric(
@@ -169,7 +175,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
               title: Align(
                 alignment: AlignmentDirectional.centerStart,
                 child: Text(
-                  "${questions[questionIndex].answers[index]}",
+                  questions[questionIndex].answers[index],
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: MediaQuery.sizeOf(context).width * 0.05,
@@ -188,7 +194,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.01,
         ),
-        CustomHomeDivider(),
+        const CustomHomeDivider(),
         SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.025,
         ),
@@ -214,7 +220,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
               questionIndex == questions.length - 1
                   ? AppTexts.send
                   : AppTexts.next,
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppColors.white,
               ),
             ),
@@ -225,7 +231,7 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
         ),
         Text(
           "(${questionIndex + 1}/${questions.length})",
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0XFF615D5D),
             fontSize: 16,
             fontWeight: FontWeight.w700,

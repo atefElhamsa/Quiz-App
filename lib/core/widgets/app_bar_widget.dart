@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
 class CustomAppBar extends StatelessWidget {
-  CustomAppBar({super.key, required this.name});
+  const CustomAppBar({super.key, required this.name});
 
-  String name;
+  final String name;
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,11 +1,12 @@
+// ignore_for_file: no_logic_in_create_state, void_checks
 import 'package:flutter/material.dart';
 import 'package:quizapp/core/utils/app_colors.dart';
 import 'package:quizapp/core/utils/app_texts.dart';
 import 'package:quizapp/features/home/data/models/question_model.dart';
-import 'package:quizapp/features/home/views/widgets/custom_check_answer.dart';
+import '../../../correct_answers/views/custom_check_answers.dart';
 
 class CustomResultDialog extends StatefulWidget {
-  CustomResultDialog({
+  const CustomResultDialog({
     super.key,
     required this.score,
     required this.length,
@@ -21,8 +22,8 @@ class CustomResultDialog extends StatefulWidget {
   final void Function()? close;
 
   @override
-  State<CustomResultDialog> createState() => _CustomResultDialogState(
-      this.score, this.length, this.click, this.close, this.questions);
+  State<CustomResultDialog> createState() =>
+      _CustomResultDialogState(score, length, click, close, questions);
 }
 
 class _CustomResultDialogState extends State<CustomResultDialog> {
@@ -43,7 +44,7 @@ class _CustomResultDialogState extends State<CustomResultDialog> {
         children: [
           IconButton(
             onPressed: widget.close,
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
           ),
           Center(
             child: Padding(
@@ -92,7 +93,7 @@ class _CustomResultDialogState extends State<CustomResultDialog> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return CheckAnswer(questions: questions);
+                            return CheckAnswerScreen(questions: questions);
                           }),
                         );
                       });
@@ -137,7 +138,7 @@ class _CustomResultDialogState extends State<CustomResultDialog> {
                       ),
                       child: Center(
                         child: Text(
-                          AppTexts.Repeat,
+                          AppTexts.retest,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: MediaQuery.sizeOf(context).height * 0.02,

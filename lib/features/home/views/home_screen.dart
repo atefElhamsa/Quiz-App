@@ -11,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -19,10 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: MediaQuery.sizeOf(context).height * 0.11,
-          flexibleSpace: CustomAppBar(name: AppTexts.appName,
+          flexibleSpace: const CustomAppBar(
+            name: AppTexts.appName,
           ),
         ),
-        body: CustomHomeBody(),
+        body: const CustomHomeBody(),
       ),
     );
   }
