@@ -21,35 +21,30 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
       answers: ["Cristiano Ronaldo", "Lionel Messi", "Neymar JR", "Halland"],
       correctAnswer: "Cristiano Ronaldo",
       selectedAnswer: null,
-      numberQuestion: "1",
     ),
     QuestionModel(
       question: "أحسن معلق ف التاريخ",
       answers: ["الشوالى", "حفيظ الدراجى", "فارس عوض", "ايمن الكاشف"],
       correctAnswer: "الشوالى",
       selectedAnswer: null,
-      numberQuestion: "2",
     ),
     QuestionModel(
       question: "كم من الكرات الذهبية مع افضل لاعب بالتاريخ",
       answers: ["1", "2", "3", "6"],
       correctAnswer: "6",
       selectedAnswer: null,
-      numberQuestion: "3",
     ),
     QuestionModel(
       question: "كم من الكرات الذهبية مع ليونيل ميسى",
       answers: ["5", "1", "10", "8"],
       correctAnswer: "8",
       selectedAnswer: null,
-      numberQuestion: "4",
     ),
     QuestionModel(
       question: "افضل كلية فى مصر",
       answers: ["حاسبات و معلومات", "هندسة", "اداب", "حقوق"],
       correctAnswer: "حاسبات و معلومات",
       selectedAnswer: null,
-      numberQuestion: "5",
     ),
   ];
 

@@ -13,7 +13,7 @@ class CheckAnswersBody extends StatelessWidget {
         children: [
           ...questions.map(
             (questionModel) => CustomCheckAnswerItemWidget(
-              questionModel: questionModel,
+              questionModel: questionModel, questions: questions,
             ),
           ),
         ],

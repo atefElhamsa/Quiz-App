@@ -93,7 +93,7 @@ class _CustomResultDialogState extends State<CustomResultDialog> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return CheckAnswerScreen(questions: questions);
+                            return CheckAnswerScreen(questions: questions,);
                           }),
                         );
                       });

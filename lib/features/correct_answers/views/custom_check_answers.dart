@@ -5,7 +5,8 @@ import 'package:quizapp/features/correct_answers/views/widgets/check_answers_bod
 import '../../home/data/models/question_model.dart';
 
 class CheckAnswerScreen extends StatelessWidget {
-  const CheckAnswerScreen({super.key, required this.questions});
+  const CheckAnswerScreen(
+      {super.key, required this.questions});
 
   final List<QuestionModel> questions;
 
@@ -19,7 +20,9 @@ class CheckAnswerScreen extends StatelessWidget {
           name: AppTexts.checkAnswer,
         ),
       ),
-      body: CheckAnswersBody(questions: questions),
+      body: CheckAnswersBody(
+        questions: questions,
+      ),
     );
   }
 }

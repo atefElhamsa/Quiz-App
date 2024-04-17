@@ -4,9 +4,10 @@ import '../../../home/data/models/question_model.dart';
 import '../../../home/views/widgets/custom_home_divider.dart';
 
 class CustomCheckAnswerItemWidget extends StatelessWidget {
-  const CustomCheckAnswerItemWidget({super.key, required this.questionModel});
+  const CustomCheckAnswerItemWidget({super.key, required this.questionModel, required this.questions});
 
   final QuestionModel questionModel;
+  final List<QuestionModel> questions;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomCheckAnswerItemWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          "(${questionModel.numberQuestion}",
+          "(${questions.indexOf(questionModel) + 1}",
           style: TextStyle(
             color: AppColors.numberOfCheckAnswer,
             fontWeight: FontWeight.w700,
