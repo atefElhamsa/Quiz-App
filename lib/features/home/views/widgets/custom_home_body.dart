@@ -14,7 +14,6 @@ class CustomHomeBody extends StatefulWidget {
 }
 
 class _CustomHomeBodyState extends State<CustomHomeBody> {
-
   List<QuestionModel> questions = [
     QuestionModel(
       question: "أفضل لاعب ف التاريخ",
@@ -205,7 +204,28 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
             backgroundColor: MaterialStateProperty.all(AppColors.primaryColor),
           ),
           onPressed: () {
-            plusQuestionIndex();
+            if (questions[questionIndex].selectedAnswer != null) {
+              plusQuestionIndex();
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Center(
+                    child: Text(
+                      "choose one answer",
+                      style: TextStyle(
+                        fontSize: MediaQuery.sizeOf(context).height * 0.025,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  backgroundColor: AppColors.primaryColor,
+                  showCloseIcon: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            }
+            // plusQuestionIndex();
           },
           child: Padding(
             padding: EdgeInsets.symmetric(
