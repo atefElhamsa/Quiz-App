@@ -194,14 +194,14 @@ class _CustomHomeBodyState extends State<CustomHomeBody> {
         ),
         TextButton(
           style: ButtonStyle(
-            shape: MaterialStateProperty.all(
+            shape: WidgetStateProperty.all(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                   MediaQuery.sizeOf(context).width * 0.02,
                 ),
               ),
             ),
-            backgroundColor: MaterialStateProperty.all(AppColors.primaryColor),
+            backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
           ),
           onPressed: () {
             if (questions[questionIndex].selectedAnswer != null) {
